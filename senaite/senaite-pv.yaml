@@ -1,25 +1,17 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: senaite-smb-pv
+  name: senaite-nfs-pv
 spec:
   capacity:
     storage: 100Gi
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany # NFS supports multiple pods if needed
   persistentVolumeReclaimPolicy: Retain
-  storageClassName: smb
+  storageClassName: nfs
   mountOptions:
-    - dir_mode=0777
-    - file_mode=0666
-    - uid=0
-    - gid=0
-    - noperm
-  csi:
-    driver: smb.csi.k8s.io
-    volumeHandle: senaite-smb-volume
-    volumeAttributes:
-      source: "//192.168.11.4/senaite"
-    nodeStageSecretRef:
-      name: smb-secret
-      namespace: default
+    - vers=3
+  nfs:
+    server: 192.168.11.4 # PTLSRVR4 <- name wouldn't resolve in wsl so using ip for now
+    path: /nfstest2
+    readOnly: false
