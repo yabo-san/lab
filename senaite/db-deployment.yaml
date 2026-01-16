@@ -15,27 +15,25 @@ spec:
         app: senaite-postgres
     spec:
       containers:
-      - name: postgres
-        image: postgres:15
-        env:
-          - name: POSTGRES_DB
-            value: senaite
-          - name: POSTGRES_USER
-            value: senaiteuser
-          - name: POSTGRES_PASSWORD
-            value: senaitepass
-        ports:
-          - containerPort: 5432
-        volumeMounts:
-          - name: postgres-data
-            mountPath: /var/lib/postgresql/data
-      volumes:
-      - name: postgres-data
-        hostPath:
-          path: /var/lib/senaite-postgres
-          type: DirectoryOrCreate
+        - name: postgres
+          image: postgres:15
+          env:
+            - name: POSTGRES_DB
+              value: senaite
+            - name: POSTGRES_USER
+              value: senaiteuser
+            - name: POSTGRES_PASSWORD
+              value: senaitepass
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: postgres-data
+              mountPath: /var/lib/postgresql/data
+              subPath: postgres
 
-      # volumes:
-      #   - name: senaite-db-storage
-      #     persistentVolumeClaim:
-      #       claimName: senaite-db-pvc
+      volumes:
+        - name: postgres-data
+          persistentVolumeClaim:
+            claimName: senaite-data-pvc
