@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: senaite-db-restore
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: restore
+          image: postgres:15
+          env:
+            - name: PGPASSWORD
+              value: senaitepass
+          command:
+            - /bin/sh
+            - -c
+            - |
+              # Choose your backup file
+              BACKUP_FILE=/mnt/data/backups/senaite_2025-01-19_00-00-00.sql
+
+              # Drop and recreate database
+              psql -h senaite-postgres-service -U senaiteuser -d postgres -c "DROP DATABASE senaite;"
+              psql -h senaite-postgres-service -U senaiteuser -d postgres -c "CREATE DATABASE senaite;"
+
+              # Restore from backup
+              psql -h senaite-postgres-service -U senaiteuser -d senaite < $BACKUP_FILE
+
+              echo "Restore complete!"
+          volumeMounts:
+            - name: senaite-data
+              mountPath: /mnt/data
+      volumes:
+        - name: senaite-data
+          persistentVolumeClaim:
+            claimName: senaite-data-pvc
