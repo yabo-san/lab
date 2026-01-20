@@ -1,7 +1,10 @@
-version: "3.8"
+# version: "3.8"
 
 services:
   senaite:
+    build:
+      context: .
+      dockerfile: Dockerfile
     image: senaite:custom-v2.6.0
     container_name: ptlsenaite
     ports:
