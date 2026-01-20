@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  senaite:
+    image: senaite:custom-v2.6.0
+    container_name: ptlsenaite
+    ports:
+      - "32626:8080" # Same port as your NodePort
+    volumes:
+      # Mount NFS share directly
+      - type: volume
+        source: senaite-data
+        target: /data
+    restart: unless-stopped
+    user: "0:0" # runAsUser: 0, runAsGroup: 0
+
+volumes:
+  senaite-data:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: "addr=192.168.11.4,vers=3,rw"
+      device: ":/nfstest2"
