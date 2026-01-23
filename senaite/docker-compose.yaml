@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: senaite:custom-v2.6.0
+    image: senaite:custom-2.6.0
     container_name: ptlsenaite
     ports:
       - "32626:8080" # Same port as your NodePort

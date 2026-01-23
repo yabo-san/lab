@@ -765,7 +765,7 @@ msgstr ""
 #: bika/lims/profiles/default/types/Batch.xml
 #: bika/lims/vocabularies/__init__.py:128
 msgid "Batch"
-msgstr "Work Order TITLE"
+msgstr "Work Order"
 
 #: bika/lims/profiles/default/types/Batch.xml
 msgid "Batch Book"
@@ -788,6 +788,7 @@ msgstr "Work Order Labels"
 #: bika/lims/profiles/default/types/Client.xml
 msgid "Batches"
 msgstr "Work Orders"
+# AFFECTS BOTH THE NAVIGATION PANE (LEFT) AND THE PAGE TITLE (just above [Open|Closed|Cancelled|All])
 
 #: bika/lims/browser/viewlets/templates/dynamic_specs_viewlet.pt:19
 msgid "Be aware that the ranges provided in the spreadsheet file from the dynamic specification might override the ranges defined in the Specifications list below."
@@ -1110,7 +1111,8 @@ msgstr ""
 #: bika/lims/browser/batchfolder.py:84
 #: bika/lims/content/batch.py:101
 msgid "Client Batch ID"
-msgstr "Client Work Order ID"
+msgstr "Purchase Order"
+# CHANGED FOR CLARITY - THIS IS THE CLIENT CONTACT, NOT OUR LAB CONTACT (ADD SAMPLE PAGE)
 
 #: senaite/core/behaviors/clientshareable.py:90
 #: senaite/core/browser/samples/rejection/templates/rejection_report.pt:83
@@ -1291,7 +1293,8 @@ msgstr ""
 
 #: senaite/core/browser/samples/view.py:202
 msgid "Contact"
-msgstr ""
+msgstr "Client Contact"
+# CHANGED FOR CLARITY - THIS IS THE CLIENT CONTACT, NOT OUR LAB CONTACT (ADD SAMPLE PAGE)
 
 #: bika/lims/browser/analysisrequest/add2.py:1838
 msgid "Contact does not belong to the selected client"
@@ -1501,7 +1504,8 @@ msgstr ""
 #: bika/lims/browser/instrument.py:651
 #: bika/lims/content/abstractbaseanalysis.py:681
 msgid "Date"
-msgstr ""
+msgstr "Due Date"
+# Changes "Date" to "Due Date" on the Work Orders page
 
 #: bika/lims/browser/analyses/view.py:124
 msgid "Date Created"
@@ -6774,7 +6778,8 @@ msgstr ""
 #. Default: "Select the client of this batch"
 #: bika/lims/content/batch.py:81
 msgid "description_batch_client"
-msgstr "description_work_order_client"
+msgstr ""
+# ALSO LEFT BLANK, BASED ON PRECEDENT
 
 #. Default: "If this option is activated, the result capture date can be entered manually for analyses"
 #: bika/lims/content/bikasetup.py:345
@@ -6994,7 +6999,8 @@ msgstr ""
 #. Default: "Assign sample to a batch"
 #: bika/lims/content/analysisrequest.py:314
 msgid "description_sample_batch"
-msgstr "description_sample_work_order"
+msgstr ""
+# ALSO LEFT BLANK, BASED ON PRECEDENT
 
 #. Default: "The contacts used in CC for email notifications"
 #: bika/lims/content/analysisrequest.py:189
@@ -7009,7 +7015,8 @@ msgstr ""
 #. Default: "Select the primary contact for this sample"
 #: bika/lims/content/analysisrequest.py:154
 msgid "description_sample_contact"
-msgstr ""
+msgstr "Select the client contact for this sample"
+# CHANGED FOR CLARITY - DESCRIPTION CLARIFIES THIS IS THE CLIENT CONTACT
 
 #. Default: "Select a container for this sample"
 #: bika/lims/content/analysisrequest.py:552
@@ -7577,7 +7584,8 @@ msgstr ""
 #. Default: "Client"
 #: bika/lims/content/batch.py:78
 msgid "label_batch_client"
-msgstr "label_work_order_client"
+msgstr ""
+# LEAVE THIS BLANK
 
 #. Default: "Allow to set the result capture date"
 #: bika/lims/content/bikasetup.py:343
@@ -7827,7 +7835,8 @@ msgstr ""
 #. Default: "Batch"
 #: bika/lims/content/analysisrequest.py:311
 msgid "label_sample_batch"
-msgstr "label_sample_work_order"
+msgstr ""
+# LEAVE THIS BLANK
 
 #. Default: "CC Contact"
 #: bika/lims/content/analysisrequest.py:186
@@ -8238,32 +8247,38 @@ msgstr ""
 #. Default: "Add"
 #: senaite/core/browser/controlpanel/batchlabels/view.py:50
 msgid "listing_batchlabels_action_add"
-msgstr "listing_workorderlabels_action_add"
+msgstr ""
+# ALSO LEFT BLANK, BASED ON PRECEDENT
 
 #. Default: "Title"
 #: senaite/core/browser/controlpanel/batchlabels/view.py:67
 msgid "listing_batchlabels_column_title"
-msgstr "listing_workorderlabels_column_title"
+msgstr ""
+# ALSO LEFT BLANK, BASED ON PRECEDENT
 
 #. Default: "Active"
 #: senaite/core/browser/controlpanel/batchlabels/view.py:77
 msgid "listing_batchlabels_state_active"
-msgstr "listing_workorderlabels_state_active"
+msgstr ""
+# ALSO LEFT BLANK, BASED ON PRECEDENT
 
 #. Default: "All"
 #: senaite/core/browser/controlpanel/batchlabels/view.py:93
 msgid "listing_batchlabels_state_all"
-msgstr "listing_workorderlabels_state_all"
+msgstr ""
+# ALSO LEFT BLANK, BASED ON PRECEDENT
 
 #. Default: "Inactive"
 #: senaite/core/browser/controlpanel/batchlabels/view.py:85
 msgid "listing_batchlabels_state_inactive"
-msgstr "listing_workorderlabels_state_inactive"
+msgstr ""
+# ALSO LEFT BLANK, BASED ON PRECEDENT
 
 #. Default: "Batch Labels"
 #: senaite/core/browser/controlpanel/batchlabels/view.py:57
 msgid "listing_batchlabels_title"
-msgstr "listing_workorderlabels_title"
+msgstr "Work Order Labels"
+# TITLE OF THE "[ADD] BATCH LABELS" PAGE
 
 #. Default: "Add"
 #: senaite/core/browser/controlpanel/containertypes/view.py:51
@@ -9345,7 +9360,8 @@ msgstr ""
 #. Default: "Name"
 #: senaite/core/content/batchlabel.py:36
 msgid "title_batchlabel_title"
-msgstr "title_workorderlabel_title"
+msgstr ""
+# ALSO LEFT BLANK, BASED ON PRECEDENT
 
 #. Default: "This site was built using the Plone Open Source CMS/WCM."
 #: senaite/core/browser/viewlets/templates/colophon.pt:12
